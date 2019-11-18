@@ -1,7 +1,7 @@
 <?php 
 
   
-/**
+/*
 class Ordinateur
 {
   public $marque;
@@ -61,6 +61,8 @@ class Laptop extends Ordinateur
 
 
     }
+    require_once("vehicule.php");
+    $vev = new vehicule();
 
     public function Affiche(){
      return "$this->genre-$this->nbroue -$this->matricul - $this->boite_vitesse " ;
@@ -89,7 +91,9 @@ class Laptop extends Ordinateur
       public function setVmax($valeure){
       return $this->vmax = $valeure;
      }
-
+      public static function Bonjour(){
+        return "ndeye sokhna";
+      }
 
     
 
@@ -120,7 +124,7 @@ public function Roule($vmax,$nbrs){
    }
 
    */
- 
+ echo vehicule:: Bonjour();
 $veh = new Vehicule("toyato" ,4, "GT-5477", 24," 25h ",5);
 echo $veh->Affiche();
 echo  $veh->Roule();
