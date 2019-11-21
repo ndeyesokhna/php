@@ -16,8 +16,11 @@
       $insert->execute([
           "nom"=>'raby',
          "prenom"=>'ndiath',
-         "email"=>'dd@gmail']);      $delete="DELETE FROM users WHERE id =21";
-      $bdd->exec($delete);    } catch (PDOException $e) {       echo" C PAS BON".$e->getMessage();
+         "email"=>'dd@gmail']);    
+           $delete="DELETE FROM users WHERE id =21";
+      $bdd->exec($delete);   
+     } catch (PDOException $e) { 
+               echo" C PAS BON".$e->getMessage();
     }
 ?><!DOCTYPE html>
 <html lang="en">

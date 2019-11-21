@@ -50,7 +50,7 @@ public function setPasswords($passwords){
 
 }
 public function Affiche (){
-    return "$this->nom $this->prenom -$this->email -$this->passwords ";
+    return "$this->nom  $this->prenom  $this->email  $this->passwords ";
 }
 
 }
