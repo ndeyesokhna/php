@@ -13,7 +13,7 @@
     />
 </head>
 <body>
-    <?php echo @$_GET['users_id']; ?>
+    <?php echo @$_GET['user_id']; ?>
     <div class="container">
         <div class="row justify-content-center">
     <?php
@@ -22,12 +22,8 @@
              $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e) {
             echo 'echec connexion'.$e->getMessage();
-        }
-
-
-
-      if(isset($_POST['nom']) AND !empty($_POST['nom'])){
-            $requete=$bdd->prepare("INSERT INTO users ( id,nom,prenom,email,genre)
+        }      if(isset($_POST['nom']) AND !empty($_POST['nom'])){
+            $requete=$bdd->prepare("INSERT INTO users (nom,prenom,email,genre)
                             VALUES (:nom, :prenom, :email, :genre)
                                ");
              if($requete->execute(["nom"=>$_POST['nom'],
@@ -38,18 +34,12 @@
                echo '<div class="col-6 ">
                 <h3 class="text-centered alert alert-success">Vos donnees ont ete bien enregistrees</h3>
             </div>';
-           else 
+           else
                echo '<div class="col-6 ">
                 <h3 class="text-centered alert alert-danger">Erreurs enregistrement</h3>
             </div>';
-      }
-
-    //REcuperation des donnees
-    $req = $bdd->query("SELECT id,nom,prenom,email FROM users ORDER BY id DESC");
-
-     ?>
-            
-            <div class="container">
+      }    //REcuperation des donnees
+    $req = $bdd->query("SELECT id,nom,prenom,email FROM users ORDER BY id DESC");     ?>            <div class="container">
                 <table class="table table-striped">
                   <thead>
                     <tr>
@@ -75,7 +65,7 @@
                 </table>
             </div>
         </div>
-    </div>
-   
-</body>
+    </div></body>
 </html>
+
+
